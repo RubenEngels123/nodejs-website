@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <div class="nav">
+    <% include templates/navbar.ejs%>
+  </div>
+  <% include templates/navbar.ejs%>
+    <h1>IT WIL HAPPEN WAHAHAHA</h1><br>
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div>
+    <br>
+  <h1>IT WIL HAPPEN WAHAHAHA</h1><br>
+    <script>
+
+      //global var
+      var homeUrl = 'http://192.168.178.60:5000'
+
+      //redirect after 7,5 sec
+      setTimeout(function () {
+        window.location.href= homeUrl
+      },7500);
+
+      //progress bar
+      function move() {
+        var elem = document.getElementById("myBar");
+        var width = 0;
+        function frame() {
+          if (width == 100){
+            clearInterval(id);
+          } else {
+            width++;
+            elem.style.width = width + '%';
+          }
+        }
+        var id = setInterval(frame, 75);
+      }
+      move();
+
+    </script>
+
+  </body>
+</html>
